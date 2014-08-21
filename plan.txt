@@ -9,15 +9,15 @@
 6. Link-cut trees (SK: тут же где-то можно Heavy-Light Decomposition)
 
 Сережа собирается прочесть:
-1. Кучи (Fibonachi, Pairing, Skew, Leftist, MinMax, Radix, Hot). Сюда же деревья от Van Emde Boas.
++1. Кучи (Fibonachi, Pairing, Skew, Leftist, MinMax, Radix, Hot). Сюда же деревья от Van Emde Boas.
 +2. Поиск цикла минимального среднего веса за O(nm). Поиск кратчайшего пути в графе за O(m*sqrtn*logN)
 +3. Проталкивание предпотока. Алгоритм Ahuja за O(nm + n^2logU). Global Relabeling, High Level Optimization, 2-Phases. Практическую часть. 
 +4. Глобальные разрезы: Штор-Вагнер, Каргер-Штейн (или это слишком просто?)
-5. inplace linear algorithms: rotate массива, сортировка, k-я статистика, частичные суммы, MinMax куча (поиск и минимума, и максимума за log без доп.памяти), Фенвик, stable Merge за O(nlogn), не stable Merge за O(n), stable Merge за O(n) оно же BlockSort. 
-6. Метод 4-х русских: DSU в Offline за O(1) (без Аккермана), умножение булевых матриц за n^3 / logn / 32, получение схема размера 2^n/n по таблице истинности, НОП за O(n^2 / log^2)
++5. inplace linear algorithms: rotate массива, сортировка, k-я статистика, частичные суммы, MinMax куча (поиск и минимума, и максимума за log без доп.памяти), Фенвик, stable Merge за O(nlogn), не stable Merge за O(n), stable Merge за O(n) оно же BlockSort. 
++6. Метод 4-х русских: DSU в Offline за O(1) (без Аккермана), умножение булевых матриц за n^3 / logn / 32, получение схемы размера 2^n/n по таблице истинности, НОП за O(n^2 / log^2)
 7. MST за Randomized O(E), проверка является ли дерево MST за честные O(E). Минимум на пути в дереве в Offline за O(1).
-8. Неортогональные 2D-запросы на плоскости за O(n^0.28)
-9. Dynamic Connectivity and 2-Connectivity в Offline (за nlog^2n, за nlogn)
-10. Может быть еще что-нибудь пол Динамические Графы
++8. Неортогональные 2D-запросы на плоскости за O(n^0.44)
++9. Dynamic Connectivity and 2-Connectivity в Offline (за nlog^2n, за nlogn)
+-10. Может быть еще что-нибудь про Динамические Графы
 
 По объему, думаю, примерно одинаково, у Паши чуть больше. Я подробнее расписал.
