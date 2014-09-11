@@ -1,0 +1,73 @@
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>План лекций</title>
+  <link href=styles/styles.css rel="stylesheet" type="text/css">
+</head>
+<h2>Задачи, решаемые с O(1) дополнительной памяти</h2>
+<ol>
+  <li>Поточный merge: O(n+m), O(mlogn), O(mlog(n/m+1)) [Hwang,Lin'72]</li>
+  <li>Бинарный поиск, сортированнный массив (find, lower_bound)</li>
+  <li>Частичные суммы (сумма на отрезке)</li>
+  <li>Дерево Фенвика (сумма на отрезке, элемент можно менять) [Fenwick'94]</li>
+  <li>reverse и rotate отрезка за O(n)</li>
+  <li>partition (кусок quick sort) [Hoare'61, Algorithm 63: Partition]</li>
+  <li>binary heap: insert, deleteMin, decreaseKey [Williams'64]</li>
+  <li>sort: heap sort, quick sort, insertion sort, selection sort</li>
+  <li>stable merge за O(nlogn), из него stable inplace merge sort за O(nlog<sup>2</sup>n) [Pardo'77, Horvarth'78, Wong'81]</li>
+  <li>k-heap: deleteMin=k*log<sub>k</sub>(n); insert,decreaseKey=log<sub>k</sub>(n) [Johnson'75]</li>
+  <li><font color=red>[hard]</font> minmax heap: deleteMin, deleteMax, insert [Atkinson'86]</li>
+  <ol>
+    <li>Хранение: odd level = min, even level = max</li>
+    <li>GetMin in O(1): root</li>
+    <li>GetMax in O(1): max(root.L, root.R)</li>
+    <li>SiftDown in O(depth): смотрим на четырех внуков, выбираем из них минимального, swap с ним + разбор случаев</li>
+    <li>SiftUp in O(depth): пусть мы min, пусть мы больше отца, тогда swap, а далее идем вверх с шагом, как в обычной Binary Heap</li>
+  </ol></li>
+  <li><font color=red>[hard]</font> merge in O(n) (все куски алгоритма, которые мы можем, сразу сделаем стабильными) [Huang'88]</li>
+  <ol>
+    <li>StableMerge(n,m) in O(n + m<sup>2</sup>), m = &radic;<span style="text-decoration:overline;">&nbsp;n&nbsp;</span></li>
+    <li>Обычный merge с дополнительной памятью перемешивает значения в доп.памяти, но не портит их</li>
+    <li>StableSort(&radic;<span style="text-decoration:overline;">&nbsp;n&nbsp;</span>) in O(n)</li>
+    <li>Sort кусков in O(n): selection sort</li>
+  </ol></li>
+  <li><font color=red>[hard]</font> stable merge in O(n), stable sort in O(nlogn)</li>
+  <ol>
+    <li>Отличие работы [Kim,Kutzner'08] от предыдущих &minus; оптимальное число сравнений O(nlog(n/m+1)) и присваиваний O(n+m)</li>
+    <li>Не рекурсивный merge sort</li>
+    <li>StableMerge(n,m) in O(n + m) и O(min(n,m)) дополнительной памяти</li>
+    <li>StableMerge(n,m) in O(n + m<sup>3/2</sup>)</li>
+    <li>Общая схема: buffer-extraction, block-rearrangment, local-merges, insert-buffer</li>
+    <li>Выделение буффера, состоящего из различных элементов (предположим пока, что различных элементов достаточно)</li>
+    <li>Сортировка блоков без их перемещения (помечаем блоки, расставляя различные числа в первых элементах)</li>
+    <li>Собственно перемещение блоков (selection sort, возвращаем исходные первые элементы)</li>
+  </ol></li>
+  <li><font color=red>[hard]</font> Beap: куча + поиск за O(&radic;<span style="text-decoration:overline;">&nbsp;n&nbsp;</span>), у каждой вершины два отца! [Munro'80]</li>
+</ol>
+<h2>Задачи, решаемые с O(1) дополнительной памяти на readonly массиве</h2>
+<ol>
+  <li>Дан массив натуральных чисел. Найти отрезок массива, с суммой ровно S.</li>
+  <li>У всех элементов кроме одного есть пара, найти недостающий.</li>
+  <li>Найти элемент, который встречается хотя бы n/2 раз (вероятностное решение, честное решение)</li>
+  <li>Даны n+1 число от 1 до n, найти любое число, которое встречается больше одного раза</li>
+</ol>
+<h2>Упражнения по теме</h2>
+<ol>
+  <li>Понять, как работает <a href="http://www.cplusplus.com/reference/algorithm/rotate/?kw=rotate">rotate</a> в C++</li>
+  <li>Даны два массива, a[] и b[], выписать все a[i]+b[j] в отсортированном порядке за O(n<sup>2</sup>logn) времени и с O(n) дополнительной памяти</li>
+  <li>Найти число инверсий в массиве с O(1) дополнительной памяти</li>
+  <li>Можно ли задачу ``минимум на отрезке'' решить за o(n) с использованием всего O(1) дополнительной памяти?</li>
+  <li>Как задачу ``минимум на отрезке'' решить за O(&radic;<span style="text-decoration:overline;">&nbsp;n&nbsp;</span>), используя O(&radic;<span style="text-decoration:overline;">&nbsp;n&nbsp;</span>) дополнительной памяти?</li>
+</ol>
+<h2>Литература</h2>
+<ol>
+  <li>1969, Kronrod, доклад в академии наук СССР [inplace merge]</li>
+  <li>1972, Hwang & Lin, A simple algorithm for merging two disjoint linearly ordered sets [merge]</li>
+  <li>1984, Ukkonen & Manilla, A simple linear-time algorithm for in suto merging [inplace merge]</li>
+  <li>1988, Huang & Lagston, Practical in-place merging [inplace merge]</li>
+  <li>2004, Denham, In-place merging algorithms [stable inplace merge]</li>
+  <li>2008, Kim & Kutzner, Ratio based stable in-place merging [stable inplace merge]</li>
+  <li>1975, Johnson, Priority queues with update and finding minimum spanning trees [k-heap]</li>
+  <li>1980, Munro & Suwanda, Implicit data structures for fast search and update [beap]</li>
+  <li>1986, Atkinson et al., Min-Max heaps and generalized priority queues [min-max heap]</li>
+  <li>1994, Fenwick, A new data structure for cumulative frequency tables [fenwick tree]</li>
+</ol>
