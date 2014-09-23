@@ -1,0 +1,11 @@
+* Сравнение разных сортировок (heap, merge, quick, introsort, insertion, selection)
+
+* reverse за $O(n)$, rotate за $O(n)$, sort за $O(nlogn)$, stable sort за $O(n^2)$.
+
+* inplace-merge: стабильный за $O(n+m^{1+eps})$, стабильный за $O(nlogn)$, нестабильный за $O(n)$
+
+* merge-sort: нерекурсивная версия за $O(nlogn)$, inplace версия за $O(nlog^2n)$
+
+* BlockSort: buffer extraction + sort blocks + local merges
+
+* Обзор структур данных без доп.памяти: heap, k-heap, min-max-heap, fenwick-tree, beap
