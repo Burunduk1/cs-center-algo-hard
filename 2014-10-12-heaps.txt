@@ -1,0 +1,13 @@
+* Leftist, Skew
+
+* Общее ускорение: add за O(1), merge за O(1)
+
+* Pairing
+
+* Weak
+
+* Binomial, Fibonacci
+
+* Radix
+
+* MinMax
