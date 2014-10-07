@@ -1,13 +1,13 @@
-* Leftist, Skew
+* Leftist Heap (левацкая куча), Skew Heap (кривая куча)
 
-* Общее ускорение: add за O(1), merge за O(1)
+* Общее ускорение: вставка и слияние произвольных сливаемых куч за O(1)
 
-* Pairing
+* Pairing Heap (спаривающаяся куча)
 
-* Weak
+* Weak Heap (слабая куча)
 
-* Binomial, Fibonacci
+* Binomial Heap (биномиальная куча), Fibonacci Heap (куча фибоначчи)
 
-* Radix
+* Radix Heap 
 
-* MinMax
+* MinMax Heap
