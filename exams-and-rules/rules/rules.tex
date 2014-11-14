@@ -1,0 +1,128 @@
+\documentclass[12pt]{article}
+
+% Автор: Сергей Копелиович
+
+\usepackage{polyglossia}
+
+\usepackage{amssymb}
+\usepackage[russian]{hyperref}
+\usepackage{datetime}
+\usepackage{cmap}
+\usepackage{enumerate}
+\usepackage{hologo}
+\usepackage{minted}
+\usepackage{unicode-math}
+\usepackage{lastpage}
+
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont{CMU Serif}  
+\setmonofont{CMU Typewriter Text}  
+\setsansfont[Mapping=tex-text]{CMU Sans Serif}
+\setmathfont{Latin Modern Math}
+\setdefaultlanguage[spelling=modern]{russian}
+\setotherlanguage{english}
+
+\sloppy
+
+\voffset=-30mm
+\textheight=240mm
+\hoffset=-25mm
+\textwidth=180mm
+
+\def\EPS{\varepsilon}
+\def\SO{\Rightarrow}
+\def\EQ{\Leftrightarrow}
+\def\t{\texttt}
+\def\O{\mathcal{O}}
+\newcommand{\q}[1]{\langle #1 \rangle} % <x>
+\newcommand\URL[1]{{\footnotesize{\url{#1}}}}
+\def\myindent{\hspace*{\parindent}}
+\def\up{\vspace*{-\baselineskip}}
+\def\NO{\t{\#}}
+\newcommand{\ITEM}[1]{{\bf \underline{#1}}\hspace{0.5em}}
+
+\makeatletter
+
+\renewcommand{\@oddfoot}{
+    \parbox{\textwidth}{
+        \sffamily
+        {{\hfil}\thepage/\pageref*{LastPage} \hfil}%
+    }
+}
+
+\newenvironment{MyList}{
+  \begin{enumerate}
+  \setlength{\parskip}{-5pt}
+  \setlength{\itemsep}{5pt}
+}{
+  \end{enumerate}
+}
+
+\newcommand\Section[1]{\vspace*{-1.5em}\section{#1}}
+\begin{document}
+
+\begin{center}
+  {\Large \bf CS-Club, осенний семестр 2014, курс алгоритмов} \\ 
+  \vspace{0.5em}
+  {\Large \bf Правила получения зачета} \\
+\end{center}
+
+\vspace{-1em}
+\noindent \underline{\hbox to 1\textwidth{{ } \hfil{ } \hfil{ } }}
+
+\Section{Что нужно сделать?}
+
+\myindent{}Выбрать оценку, на которую вы претендуете и сделать {\bf\it любое одно} из заданий на эту оценку.
+Во всех заданиях нужно реализовать предложенный алгоритм
+или структуру данных и сделать для него тесты.
+В качестве результата нужно предоставить
+исходный код и краткий отчет с результатами тестов.
+
+\vspace*{0.5em}
+Список задач будет пополняться по ходу курса.
+
+\Section{Пример готового задания}
+
+Тема: реализовать бинарную кучу. \\
+Ссылка: \url{http://acm.math.spbu.ru/~sk1/mm/cs-club/sample-report-2014.7z}.
+              
+\Section{Задания на 3}
+
+\begin{MyList}
+\item Любое функциональное сбалансированное дерево поиска (path cloning)
+\item Orthogonal Range Query: статическая задача в 2D c $\O(\log^2 n)$ на запрос
+\item Fractional Cascading: фреймворк для Fractional Cascading на списке
+\item External Memory: стек и очередь
+\item Cache oblivious: транспонирование матрицы
+\end{MyList}
+
+\Section{Задания на 4}
+
+\begin{MyList}
+\item Частично сбалансированный связный список с $\O(1)$ на операцию (fat nodes + cloning)
+\item Orthogonal Range Query: статическая задача в 2D c $\O(\log n)$ на запрос
+\item Orthogonal Range Query: статическая задача в $R^d$ c $O(\log^d n)$ на запрос
+\item Fractional Cascading: фреймворк для Fractional Cascading на дереве
+\item External Memory: сортировка ($k$-блочный merge sort)
+\item External Memory: B-дерево
+\item Cache oblivious: дерево интервалов 
+\end{MyList}
+
+\Section{Задания на 5}
+
+\begin{MyList}
+\item Частично сбалансированное красно-черное дерево с $\O(1)$ памяти на операцию (fat nodes + cloning)
+\item Orthogonal Range Query: статическая задача в $R^d$ c $\O(\log^{d-1}n)$ на запрос
+\item Orthogonal Range Query: динамическая задача в 2D c $\O(\log^2 n)$ на запрос
+\item Fractional Cascading: фреймворк для Fractional Cascading на ациклическом графе с ограничениями на ребрах
+\item External Memory: разворачивание списка за $\O(n)$
+\item External Memory: куча
+\end{MyList}
+
+\Section{Задания на 5+}
+
+\begin{MyList}
+\item Orthogonal Range Query: динамическая задача в 3D c $\O(\log n)$ на запрос
+\end{MyList}
+
+\end{document}

@@ -1,0 +1,129 @@
+\documentclass[12pt]{article}
+
+% Автор: Сергей Копелиович
+
+\usepackage{polyglossia}
+
+\usepackage{amssymb}
+\usepackage[russian]{hyperref}
+\usepackage{datetime}
+\usepackage{cmap}
+\usepackage{enumerate}
+\usepackage{hologo}
+\usepackage{minted}
+\usepackage{unicode-math}
+\usepackage{lastpage}
+
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont{CMU Serif}  
+\setmonofont{CMU Typewriter Text}  
+\setsansfont[Mapping=tex-text]{CMU Sans Serif}
+\setmathfont{Latin Modern Math}
+\setdefaultlanguage[spelling=modern]{russian}
+\setotherlanguage{english}
+
+\sloppy
+
+\voffset=-25mm
+\textheight=230mm
+\hoffset=-25mm
+\textwidth=180mm
+
+\def\EPS{\varepsilon}
+\def\SO{\Rightarrow}
+\def\EQ{\Leftrightarrow}
+\def\t{\texttt}
+\def\O{\mathcal{O}}
+\newcommand{\q}[1]{\langle #1 \rangle} % <x>
+\newcommand\URL[1]{{\footnotesize{\url{#1}}}}
+\def\myindent{\hspace*{\parindent}}
+\def\up{\vspace*{-\baselineskip}}
+\def\NO{\t{\#}}
+\newcommand{\ITEM}[1]{{\bf \underline{#1}}\hspace{0.5em}}
+
+\makeatletter
+
+\renewcommand{\@oddfoot}{
+    \parbox{\textwidth}{
+        \sffamily
+        {{\hfil}\thepage/\pageref*{LastPage} \hfil}%
+    }
+}
+
+\newenvironment{MyList}{
+  \begin{enumerate}
+  \setlength{\parskip}{-5pt}
+  \setlength{\itemsep}{5pt}
+}{
+  \end{enumerate}
+}
+
+\newcommand\Section[1]{\vspace*{-1em}\section{#1}}
+\begin{document}
+
+\begin{center}
+  {\Large \bf CS-Club, осенний семестр 2014, курс алгоритмов} \\ 
+  \vspace{0.5em}
+  {\Large \bf Реализация бинарной кучи} \\
+  \vspace{0.5em}
+  {\large Сергей Копелиович} \\
+  \vspace{0.5em}
+  {Собрано {\today} в {\currenttime}}
+\end{center}
+
+\vspace{-1em}
+\noindent \underline{\hbox to 1\textwidth{{ } \hfil{ } \hfil{ } }}
+
+\Section{Постановка задачи}
+
+Реализовать бинарную кучу. \\
+Протестировать корректность реализации. \\
+Протестировать скорость работы. \\
+Сравнить с \t{set<int>}, \t{priority\_queue<int>}
+              
+\Section{Реализация}
+
+Реализован следующий основной интерфейс:
+\begin{minted}{c}
+  void build( int an, POINTER a ); // O(n)
+  void add( int x ); // O(log n)
+  T extractMin(); // O(logn)
+  T getMin(); O(1)
+\end{minted}
+И две внутренние дополнительные функции:
+\begin{minted}{c}
+  void siftUp( int i ); // O(log i)
+  int siftDown( int i ); // O(log(n/i))
+\end{minted}
+
+\Section{Тестирование}
+
+\myindent{}Тест \NO{1}: 
+генерируем случайный массив из $n$ чисел, строим по нему кучу, достаем по очереди элеметы из кучи.
+Замеряем время работы. 
+Сравниваем результат работы решения с результатом наивного решения, вынимающего минимумы из массива за $\O(n)$. 
+
+Тест \NO{2}:  
+генерируем случайный массив из $n$ чисел, добавляем по одному элементы в кучу, достаем по очереди элеметы из кучи.
+Сравниваем результат работы решения с результатом наивного решения, вынимающего минимумы из массива за $\O(n)$. 
+
+Чтобы воспроизвести тесты, запустите \t{bash run.sh}
+
+\Section{Результаты тестирования}
+
+H -- наша реализация бинарной кучи \\
+Q -- \t{priority\_queue<int>} \\
+S -- \t{multiset<int>}
+
+\vspace{1em}
+\begin{tabular}{|c|r|r|r|}
+\hline
+n/algo & H & Q & S \\
+\hline
+$10^6$ & 0.61 sec & 0.50 sec & 1.64 sec \\
+\hline
+$10^7$ & 11.14 sec & 10.13 sec& 26.82 sec \\
+\hline
+\end{tabular}
+
+\end{document}
