@@ -1,0 +1,9 @@
+* Исправления в Pairing Heap. Доказательство $O(\sqrt{n})$ в Pairing Heap.
+
+* Binomial Heap (биномиальная куча)
+
+* Fibonacci Heap (куча фибоначчи)
+
+* Radix Heap 
+
+* MinMax Heap
