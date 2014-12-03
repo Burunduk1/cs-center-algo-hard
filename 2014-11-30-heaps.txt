@@ -1,6 +1,6 @@
 * Исправления в Pairing Heap. Доказательство $O(\sqrt{n})$ в Pairing Heap.
 
-* Binomial Heap (биномиальная куча)
+* Binomial Heap (биномиальная куча) + Skew Base
 
 * Fibonacci Heap (куча фибоначчи)
 

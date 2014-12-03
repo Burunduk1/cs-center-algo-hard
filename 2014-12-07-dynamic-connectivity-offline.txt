@@ -1,0 +1,7 @@
+* Dynamic Connectivity Offline
+	* Связность. Ребра только добавляются. СНМ (DSU)
+	* Корневая оптимизация, решение за $O((n+k)\sqrt{n})$ в offline
+	* Решение для Connectivity за $O((k+n)\log k)$ в offline
+	* Двухсвязность. Ребра только добавляются
+	* Решение для 2-Connectivity за $O((k+n)\log k)$ в offline
+	* Решение задачи про MST: $\max w - \min w \rightarrow \min$
