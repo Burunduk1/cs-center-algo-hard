@@ -1,6 +1,7 @@
 Radix Heap + Dijkstra
 +5 Ilnur Shugaepov <itmo.stud@gmail.com>
 +5 Pavel Avdeyev <avdeevp@gmail.com>
++5 Паша Чуприков 
 
 MinMax Heap
 +4 Марк Ежков [делал на 4, таки доделал]
@@ -9,6 +10,7 @@ MinMax Heap
 Boot strapping
 +5 Олег Краюшкин
 +5 Ольга Бурсиан
++5 Кирилл Елагин
 
 Orthogonal Range-Query
 +5 Анна Малова [делала на 5, таки доделала]
